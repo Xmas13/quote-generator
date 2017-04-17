@@ -1,0 +1,18 @@
+{
+  "name": "quote-generator",
+  "description": "Angular 2 app that grabs and displays quotes from the forismatic.com API",
+  "main": "",
+  "authors": [
+    "Noel Miller <noel@asolan.io>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Xmas13/quote-generator",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
