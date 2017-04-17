@@ -300,7 +300,8 @@ var QuotesComponent = (function () {
     // Create Tweet handles the logic of putting the get request together to auto populate the tweet with the quote, author and hashtag
     QuotesComponent.prototype.createTweet = function () {
         this.tweet.quote = this.quote.quote;
-        this.tweet.encodedQuote = encodeURIComponent(this.quote.quote); // encodes the quote so you don't have unexpected results from special characters in the request
+        // encodes the quote so you don't have unexpected results from special characters in the request
+        this.tweet.encodedQuote = encodeURIComponent(this.quote.quote);
         this.tweet.hashtag = this.hashtag;
         this.tweet.encodedHashtag = encodeURIComponent(this.tweet.hashtag);
         this.tweet.author = this.quote.author;

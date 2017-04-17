@@ -10,7 +10,8 @@ import { QuotesService } from '../../services/quotes.service';
   providers: [Quote, Tweet]
 })
 export class QuotesComponent implements OnInit {
-  _unencodedTweet: string; // This is used to get the length of the entire data stream to determine if the createTweet() function needs to use twitter or twishort.
+  // This is used to get the length of the entire data stream to determine if the createTweet() function needs to use twitter or twishort.
+  _unencodedTweet: string;
   _tweet: string; // Final composed tweet
   twitter_uri : string = "https://twitter.com/intent/tweet?text="; // URI for Twitter API we are using
   twishort_uri: string = "https://twishort.com/post?text=" // URI for twishort API
@@ -37,8 +38,9 @@ export class QuotesComponent implements OnInit {
 
   // Create Tweet handles the logic of putting the get request together to auto populate the tweet with the quote, author and hashtag
   createTweet() {
-        this.tweet.quote = this.quote.quote
-        this.tweet.encodedQuote = encodeURIComponent(this.quote.quote); // encodes the quote so you don't have unexpected results from special characters in the request
+        this.tweet.quote = this.quote.quote;
+        // encodes the quote so you don't have unexpected results from special characters in the request
+        this.tweet.encodedQuote = encodeURIComponent(this.quote.quote);
         this.tweet.hashtag = this.hashtag;
         this.tweet.encodedHashtag = encodeURIComponent(this.tweet.hashtag);
         this.tweet.author = this.quote.author;
