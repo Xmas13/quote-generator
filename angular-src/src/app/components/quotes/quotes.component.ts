@@ -13,7 +13,7 @@ export class QuotesComponent implements OnInit {
   _unencodedTweet: string;
   _tweet: string;
   twitter_uri : string = "https://twitter.com/intent/tweet?text=";
-  twishort_uri: string = "http://twishort.com/post?text="
+  twishort_uri: string = "https://twishort.com/post?text="
   hashtag: string = " #programming_quotes";
 
   constructor(

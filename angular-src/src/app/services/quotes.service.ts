@@ -10,7 +10,7 @@ export class QuotesService {
   ) { }
 
   getQuote() {
-    return this.http.get('http://quotes.stormconsultancy.co.uk/random.json')
+    return this.http.get('https://quotes.stormconsultancy.co.uk/random.json')
       .map(res => res.json());
   }
 
