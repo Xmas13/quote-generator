@@ -1,4 +1,4 @@
 export class Quote {
-  quote: String;
-  author: String;
+  quote: string;
+  author: string;
 }
