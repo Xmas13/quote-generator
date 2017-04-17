@@ -274,17 +274,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var QuotesComponent = (function () {
-    function QuotesComponent(quote, quotesService, tweet) {
-        this.quote = quote;
+    function QuotesComponent(quotesService, // Imports the custom service we created
+        quote, // Imports Quote Class
+        tweet // Imports Tweet Class
+    ) {
         this.quotesService = quotesService;
-        this.tweet = tweet;
+        this.quote = quote;
+        this.tweet = tweet; // Imports Tweet Class
         this.twitter_uri = "https://twitter.com/intent/tweet?text="; // URI for Twitter API we are using
         this.twishort_uri = "https://twishort.com/post?text="; // URI for twishort API
         this.hashtag = " #programming_quotes"; // hashtag that gets appended to each tweet
     }
     QuotesComponent.prototype.ngOnInit = function () {
-        this.showQuote();
+        this.showQuote(); // Runs show quote each time the page loads (important to get an initial quote when loading the page)
     };
+    // ShowQuote is used to subscribe to the promise to get the quote and author and set these to global variables in the component
     QuotesComponent.prototype.showQuote = function () {
         var _this = this;
         this.quotesService.getQuote()
@@ -293,9 +297,10 @@ var QuotesComponent = (function () {
             _this.quote.author = data.author;
         });
     };
+    // Create Tweet handles the logic of putting the get request together to auto populate the tweet with the quote, author and hashtag
     QuotesComponent.prototype.createTweet = function () {
         this.tweet.quote = this.quote.quote;
-        this.tweet.encodedQuote = encodeURIComponent(this.quote.quote);
+        this.tweet.encodedQuote = encodeURIComponent(this.quote.quote); // encodes the quote so you don't have unexpected results from special characters in the request
         this.tweet.hashtag = this.hashtag;
         this.tweet.encodedHashtag = encodeURIComponent(this.tweet.hashtag);
         this.tweet.author = this.quote.author;
@@ -316,7 +321,9 @@ QuotesComponent = __decorate([
         template: __webpack_require__(142),
         styles: [__webpack_require__(139)],
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__classes_quote__["a" /* Quote */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__classes_quote__["a" /* Quote */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_quotes_service__["a" /* QuotesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_quotes_service__["a" /* QuotesService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__classes_tweet__["a" /* Tweet */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__classes_tweet__["a" /* Tweet */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__services_quotes_service__["a" /* QuotesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_quotes_service__["a" /* QuotesService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__classes_quote__["a" /* Quote */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__classes_quote__["a" /* Quote */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__classes_tweet__["a" /* Tweet */] // Imports Tweet Class
+         !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__classes_tweet__["a" /* Tweet */] // Imports Tweet Class
+        ) === "function" && _c || Object])
 ], QuotesComponent);
 
 var _a, _b, _c;
