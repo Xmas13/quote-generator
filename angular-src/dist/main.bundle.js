@@ -46,19 +46,50 @@ module.exports = "<div class=\"vertical-center\">\r\n  <div class=\"jumbotron\">
 /***/ 142:
 /***/ (function(module, exports) {
 
-module.exports = "<h2>{{quote.quote}}</h2>\r\n<h3><em>{{quote.author}}</em></h3>\r\n<hr />\r\n<p><a (click)=\"this.showQuote()\" class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">New Quote</a> <a (click)=\"this.createTweet()\" class=\"btn btn-info btn-lg\" href=\"{{this._tweet}}\" role=\"button\" target=\"_blank\"><i class=\"fa fa-twitter fa-1x\" aria-hidden=\"true\"></i> tweet</a></p>\r\n"
+module.exports = "<!-- Displays quote and author gotten from the API  -->\r\n<h2>{{quote.quote}}</h2>\r\n<h3><em>{{quote.author}}</em></h3>\r\n<hr />\r\n<!-- This is the markup for the 2 buttons. Both are wired up to do functions in our quote component. -->\r\n<p>\r\n  <a (click)=\"this.showQuote()\" class=\"btn btn-primary btn-lg\" role=\"button\">New Quote</a>\r\n  <a (click)=\"this.createTweet()\" class=\"btn btn-info btn-lg\" href=\"{{this._tweet}}\" role=\"button\" target=\"_blank\"><i class=\"fa fa-twitter fa-1x\" aria-hidden=\"true\"></i> tweet</a>\r\n</p>\r\n"
 
 /***/ }),
 
 /***/ 167:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(73);
+module.exports = __webpack_require__(75);
 
 
 /***/ }),
 
 /***/ 49:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Quote; });
+// Quote class used in the quotes component
+var Quote = (function () {
+    function Quote() {
+    }
+    return Quote;
+}());
+
+//# sourceMappingURL=quote.js.map
+
+/***/ }),
+
+/***/ 50:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Tweet; });
+var Tweet = (function () {
+    function Tweet() {
+    }
+    return Tweet;
+}());
+
+//# sourceMappingURL=tweet.js.map
+
+/***/ }),
+
+/***/ 51:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -83,8 +114,9 @@ var QuotesService = (function () {
     function QuotesService(http) {
         this.http = http;
     }
+    // Uses the Http module to get a random quote from the outside api. It then maps it as JSON to be easily manipulated.
     QuotesService.prototype.getQuote = function () {
-        return this.http.get('http://quotes.stormconsultancy.co.uk/random.json')
+        return this.http.get('https://quotes.stormconsultancy.co.uk/random.json')
             .map(function (res) { return res.json(); });
     };
     return QuotesService;
@@ -99,7 +131,7 @@ var _a;
 
 /***/ }),
 
-/***/ 72:
+/***/ 74:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -108,19 +140,19 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 72;
+webpackEmptyContext.id = 74;
 
 
 /***/ }),
 
-/***/ 73:
+/***/ 75:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(78);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(82);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(84);
 
 
@@ -134,7 +166,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 /***/ }),
 
-/***/ 79:
+/***/ 81:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -165,17 +197,19 @@ AppComponent = __decorate([
 
 /***/ }),
 
-/***/ 80:
+/***/ 82:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_quotes_quotes_component__ = __webpack_require__(83);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_quotes_service__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_quotes_service__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__classes_quote__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__classes_tweet__ = __webpack_require__(50);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -183,6 +217,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -206,7 +242,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_6__services_quotes_service__["a" /* QuotesService */]],
+        providers: [__WEBPACK_IMPORTED_MODULE_6__services_quotes_service__["a" /* QuotesService */], __WEBPACK_IMPORTED_MODULE_7__classes_quote__["a" /* Quote */], __WEBPACK_IMPORTED_MODULE_8__classes_tweet__["a" /* Tweet */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
@@ -215,44 +251,14 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 81:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Quote; });
-var Quote = (function () {
-    function Quote() {
-    }
-    return Quote;
-}());
-
-//# sourceMappingURL=quote.js.map
-
-/***/ }),
-
-/***/ 82:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Tweet; });
-var Tweet = (function () {
-    function Tweet() {
-    }
-    return Tweet;
-}());
-
-//# sourceMappingURL=tweet.js.map
-
-/***/ }),
-
 /***/ 83:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__classes_quote__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__classes_tweet__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_quotes_service__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__classes_quote__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__classes_tweet__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_quotes_service__ = __webpack_require__(51);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return QuotesComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -272,9 +278,9 @@ var QuotesComponent = (function () {
         this.quote = quote;
         this.quotesService = quotesService;
         this.tweet = tweet;
-        this.twitter_uri = "https://twitter.com/intent/tweet?text=";
-        this.twishort_uri = "http://twishort.com/post?text=";
-        this.hashtag = " #programming_quotes";
+        this.twitter_uri = "https://twitter.com/intent/tweet?text="; // URI for Twitter API we are using
+        this.twishort_uri = "https://twishort.com/post?text="; // URI for twishort API
+        this.hashtag = " #programming_quotes"; // hashtag that gets appended to each tweet
     }
     QuotesComponent.prototype.ngOnInit = function () {
         this.showQuote();
@@ -309,7 +315,6 @@ QuotesComponent = __decorate([
         selector: 'app-quotes',
         template: __webpack_require__(142),
         styles: [__webpack_require__(139)],
-        providers: [__WEBPACK_IMPORTED_MODULE_1__classes_quote__["a" /* Quote */], __WEBPACK_IMPORTED_MODULE_2__classes_tweet__["a" /* Tweet */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__classes_quote__["a" /* Quote */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__classes_quote__["a" /* Quote */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_quotes_service__["a" /* QuotesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_quotes_service__["a" /* QuotesService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__classes_tweet__["a" /* Tweet */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__classes_tweet__["a" /* Tweet */]) === "function" && _c || Object])
 ], QuotesComponent);
