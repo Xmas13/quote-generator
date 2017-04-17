@@ -8,9 +8,6 @@ import { QuotesComponent } from './components/quotes/quotes.component';
 
 import { QuotesService } from './services/quotes.service';
 
-import { Quote } from './classes/quote';
-import { Tweet } from './classes/tweet';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +18,7 @@ import { Tweet } from './classes/tweet';
     FormsModule,
     HttpModule,
   ],
-  providers: [QuotesService, Quote, Tweet],
+  providers: [QuotesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
