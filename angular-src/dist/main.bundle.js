@@ -320,6 +320,7 @@ QuotesComponent = __decorate([
         selector: 'app-quotes',
         template: __webpack_require__(142),
         styles: [__webpack_require__(139)],
+        providers: [__WEBPACK_IMPORTED_MODULE_1__classes_quote__["a" /* Quote */], __WEBPACK_IMPORTED_MODULE_2__classes_tweet__["a" /* Tweet */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__services_quotes_service__["a" /* QuotesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_quotes_service__["a" /* QuotesService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__classes_quote__["a" /* Quote */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__classes_quote__["a" /* Quote */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__classes_tweet__["a" /* Tweet */] // Imports Tweet Class
          !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__classes_tweet__["a" /* Tweet */] // Imports Tweet Class

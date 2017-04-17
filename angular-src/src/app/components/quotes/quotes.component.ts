@@ -7,6 +7,7 @@ import { QuotesService } from '../../services/quotes.service';
   selector: 'app-quotes',
   templateUrl: './quotes.component.html',
   styleUrls: ['./quotes.component.css'],
+  providers: [Quote, Tweet]
 })
 export class QuotesComponent implements OnInit {
   _unencodedTweet: string; // This is used to get the length of the entire data stream to determine if the createTweet() function needs to use twitter or twishort.
