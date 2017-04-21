@@ -87,7 +87,7 @@ var QuotesService = (function () {
     }
     // Uses the Http module to get a random quote from the outside api. It then maps it as JSON to be easily manipulated.
     QuotesService.prototype.getQuote = function () {
-        return this.jsonp.request('http://quotes.stormconsultancy.co.uk/random.json?callback=JSONP_CALLBACK')
+        return this.jsonp.request('https://quotes.stormconsultancy.co.uk/random.json?callback=JSONP_CALLBACK')
             .map(function (res) {
             return res.json();
         });
